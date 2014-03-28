@@ -1,0 +1,287 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x77887eeb, pid=3056, tid=3024
+#
+# JRE version: 6.0_16-b01
+# Java VM: Java HotSpot(TM) Client VM (14.2-b01 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x7eeb]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02bba000):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=3024, stack(0x03140000,0x03190000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000018
+
+Registers:
+EAX=0x00000004, EBX=0x0318e8b0, ECX=0x7ffad000, EDX=0x00000004
+ESP=0x0318e858, EBP=0x0318e880, ESI=0x00000000, EDI=0x037412a0
+EIP=0x77887eeb, EFLAGS=0x00010297
+
+Top of Stack: (sp=0x0318e858)
+0x0318e858:   1f7a2bd1 00000004 037412c4 1f7a2beb
+0x0318e868:   037412c4 00000000 1f7a8a3b 037412c4
+0x0318e878:   1f7d0000 00000000 0318e8a8 1f7a8b14
+0x0318e888:   02ba5020 02bba110 26ae9458 6d4211cb
+0x0318e898:   037412a0 0318e8b0 02bba000 26ae9458
+0x0318e8a8:   0318e8e8 00989ca7 00000000 0318e904
+0x0318e8b8:   037412a0 00000000 0318e8f8 00000001
+0x0318e8c8:   0318e8c8 00000000 0318e904 26aedcc0 
+
+Instructions: (pc=0x77887eeb)
+0x77887edb:   cc cc cc cc cc 64 8b 0d 18 00 00 00 8b 54 24 04
+0x77887eeb:   83 7a 14 00 75 4f 90 ff 42 04 75 19 8b 41 24 89 
+
+
+Stack: [0x03140000,0x03190000],  sp=0x0318e858,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x7eeb]
+C  [ODBC32.dll+0x8b14]
+j  sun.jdbc.odbc.JdbcOdbc.allocConnect(J[B)J+0
+j  sun.jdbc.odbc.JdbcOdbc.SQLAllocConnect(J)J+30
+j  sun.jdbc.odbc.JdbcOdbcDriver.allocConnection(J)J+6
+j  sun.jdbc.odbc.JdbcOdbcConnection.initialize(Ljava/lang/String;Ljava/util/Properties;I)V+37
+j  sun.jdbc.odbc.JdbcOdbcDriver.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+129
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)Ljava/sql/Connection;+210
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;)Ljava/sql/Connection;+15
+j  pzm.dbcon.DB_projektzeit_Connect.openDB()V+25
+j  pzm.core.Term.getPrGroup(I)Ljava/lang/String;+10
+j  pzm.tablemodel.TermEditTableModel.getValueAt(II)Ljava/lang/Object;+79
+J  javax.swing.JTable.prepareRenderer(Ljavax/swing/table/TableCellRenderer;II)Ljava/awt/Component;
+J  javax.swing.plaf.basic.BasicTableUI.paintCell(Ljava/awt/Graphics;Ljava/awt/Rectangle;II)V
+J  javax.swing.plaf.basic.BasicTableUI.paintCells(Ljava/awt/Graphics;IIII)V
+j  javax.swing.plaf.basic.BasicTableUI.paint(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V+272
+J  javax.swing.plaf.ComponentUI.update(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V
+J  javax.swing.JComponent.paintComponent(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  javax.swing.JViewport.paint(Ljava/awt/Graphics;)V+205
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  javax.swing.JLayeredPane.paint(Ljava/awt/Graphics;)V+73
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+j  javax.swing.JComponent.paintToOffscreen(Ljava/awt/Graphics;IIIIII)V+72
+j  javax.swing.BufferStrategyPaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)Z+157
+j  javax.swing.RepaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)V+52
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  java.awt.GraphicsCallback$PaintCallback.run(Ljava/awt/Component;Ljava/awt/Graphics;)V+2
+j  sun.awt.SunGraphicsCallback.runOneComponent(Ljava/awt/Component;Ljava/awt/Rectangle;Ljava/awt/Graphics;Ljava/awt/Shape;I)V+155
+j  sun.awt.SunGraphicsCallback.runComponents([Ljava/awt/Component;Ljava/awt/Graphics;I)V+104
+j  java.awt.Container.paint(Ljava/awt/Graphics;)V+73
+j  javax.swing.RepaintManager.paintDirtyRegions(Ljava/util/Map;)V+256
+j  javax.swing.RepaintManager.paintDirtyRegions()V+46
+j  javax.swing.RepaintManager.seqPaintDirtyRegions()V+73
+j  javax.swing.SystemEventQueueUtilities$ComponentWorkRequest.run()V+36
+J  java.awt.event.InvocationEvent.dispatch()V
+J  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecf9c]
+V  [jvm.dll+0x1741e1]
+V  [jvm.dll+0xed167]
+V  [jvm.dll+0xed1dd]
+V  [jvm.dll+0x116290]
+V  [jvm.dll+0x1d0424]
+V  [jvm.dll+0x173e5c]
+C  [msvcr71.dll+0x9565]
+C  [KERNEL32.dll+0xb3bc]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.jdbc.odbc.JdbcOdbc.allocConnect(J[B)J+0
+j  sun.jdbc.odbc.JdbcOdbc.SQLAllocConnect(J)J+30
+j  sun.jdbc.odbc.JdbcOdbcDriver.allocConnection(J)J+6
+j  sun.jdbc.odbc.JdbcOdbcConnection.initialize(Ljava/lang/String;Ljava/util/Properties;I)V+37
+j  sun.jdbc.odbc.JdbcOdbcDriver.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+129
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)Ljava/sql/Connection;+210
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;)Ljava/sql/Connection;+15
+j  pzm.dbcon.DB_projektzeit_Connect.openDB()V+25
+j  pzm.core.Term.getPrGroup(I)Ljava/lang/String;+10
+j  pzm.tablemodel.TermEditTableModel.getValueAt(II)Ljava/lang/Object;+79
+J  javax.swing.JTable.prepareRenderer(Ljavax/swing/table/TableCellRenderer;II)Ljava/awt/Component;
+J  javax.swing.plaf.basic.BasicTableUI.paintCell(Ljava/awt/Graphics;Ljava/awt/Rectangle;II)V
+J  javax.swing.plaf.basic.BasicTableUI.paintCells(Ljava/awt/Graphics;IIII)V
+j  javax.swing.plaf.basic.BasicTableUI.paint(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V+272
+J  javax.swing.plaf.ComponentUI.update(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V
+J  javax.swing.JComponent.paintComponent(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  javax.swing.JViewport.paint(Ljava/awt/Graphics;)V+205
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  javax.swing.JLayeredPane.paint(Ljava/awt/Graphics;)V+73
+J  javax.swing.JComponent.paintChildren(Ljava/awt/Graphics;)V
+j  javax.swing.JComponent.paintToOffscreen(Ljava/awt/Graphics;IIIIII)V+72
+j  javax.swing.BufferStrategyPaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)Z+157
+j  javax.swing.RepaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)V+52
+J  javax.swing.JComponent.paint(Ljava/awt/Graphics;)V
+j  java.awt.GraphicsCallback$PaintCallback.run(Ljava/awt/Component;Ljava/awt/Graphics;)V+2
+j  sun.awt.SunGraphicsCallback.runOneComponent(Ljava/awt/Component;Ljava/awt/Rectangle;Ljava/awt/Graphics;Ljava/awt/Shape;I)V+155
+j  sun.awt.SunGraphicsCallback.runComponents([Ljava/awt/Component;Ljava/awt/Graphics;I)V+104
+j  java.awt.Container.paint(Ljava/awt/Graphics;)V+73
+j  javax.swing.RepaintManager.paintDirtyRegions(Ljava/util/Map;)V+256
+j  javax.swing.RepaintManager.paintDirtyRegions()V+46
+j  javax.swing.RepaintManager.seqPaintDirtyRegions()V+73
+j  javax.swing.SystemEventQueueUtilities$ComponentWorkRequest.run()V+36
+J  java.awt.event.InvocationEvent.dispatch()V
+J  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02e68800 JavaThread "TimerQueue" daemon [_thread_blocked, id=2868, stack(0x036d0000,0x03720000)]
+  0x00266c00 JavaThread "DestroyJavaVM" [_thread_blocked, id=2000, stack(0x00900000,0x00950000)]
+=>0x02bba000 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=3024, stack(0x03140000,0x03190000)]
+  0x02e49800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=484, stack(0x030f0000,0x03140000)]
+  0x02e48000 JavaThread "AWT-Shutdown" [_thread_blocked, id=588, stack(0x030a0000,0x030f0000)]
+  0x02e44800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2648, stack(0x03050000,0x030a0000)]
+  0x02b29400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2840, stack(0x02da0000,0x02df0000)]
+  0x02b22c00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2276, stack(0x02d50000,0x02da0000)]
+  0x02b21400 JavaThread "Attach Listener" daemon [_thread_blocked, id=2396, stack(0x02d00000,0x02d50000)]
+  0x02b20000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2416, stack(0x02cb0000,0x02d00000)]
+  0x02ae1800 JavaThread "Finalizer" daemon [_thread_blocked, id=2760, stack(0x02c60000,0x02cb0000)]
+  0x02adcc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2592, stack(0x02c10000,0x02c60000)]
+
+Other Threads:
+  0x02adb400 VMThread [stack: 0x02bc0000,0x02c10000] [id=2884]
+  0x02b3cc00 WatcherThread [stack: 0x02df0000,0x02e40000] [id=1880]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 41K [0x22900000, 0x22a00000, 0x22de0000)
+  eden space 896K,   4% used [0x22900000, 0x2290a7f8, 0x229e0000)
+  from space 64K,   0% used [0x229e0000, 0x229e0000, 0x229f0000)
+  to   space 64K,   0% used [0x229f0000, 0x229f0000, 0x22a00000)
+ tenured generation   total 9188K, used 5637K [0x22de0000, 0x236d9000, 0x26900000)
+   the space 9188K,  61% used [0x22de0000, 0x23361550, 0x23361600, 0x236d9000)
+ compacting perm gen  total 12288K, used 2456K [0x26900000, 0x27500000, 0x2a900000)
+   the space 12288K,  19% used [0x26900000, 0x26b66340, 0x26b66400, 0x27500000)
+    ro space 8192K,  67% used [0x2a900000, 0x2ae69040, 0x2ae69200, 0x2b100000)
+    rw space 12288K,  54% used [0x2b100000, 0x2b77d348, 0x2b77d400, 0x2bd00000)
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\java.exe
+0x77880000 - 0x77902000 	C:\WINNT\system32\ntdll.dll
+0x79350000 - 0x793b5000 	C:\WINNT\system32\ADVAPI32.dll
+0x77e70000 - 0x77f31000 	C:\WINNT\system32\KERNEL32.dll
+0x77d20000 - 0x77d8f000 	C:\WINNT\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db3b000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\client\jvm.dll
+0x77e00000 - 0x77e5f000 	C:\WINNT\system32\USER32.dll
+0x77f40000 - 0x77f7d000 	C:\WINNT\system32\GDI32.dll
+0x77540000 - 0x77571000 	C:\WINNT\system32\WINMM.dll
+0x6bd00000 - 0x6bd0d000 	C:\WINNT\system32\SYNCOR11.DLL
+0x6d860000 - 0x6d86c000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\java.dll
+0x6d340000 - 0x6d348000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\hpi.dll
+0x68f30000 - 0x68f3b000 	C:\WINNT\system32\PSAPI.DLL
+0x6d8a0000 - 0x6d8af000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\zip.dll
+0x6d0b0000 - 0x6d1fa000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\awt.dll
+0x777f0000 - 0x7780e000 	C:\WINNT\system32\WINSPOOL.DRV
+0x782f0000 - 0x78301000 	C:\WINNT\system32\MPR.DLL
+0x75df0000 - 0x75e0a000 	C:\WINNT\system32\IMM32.dll
+0x7ce80000 - 0x7cf6f000 	C:\WINNT\system32\ole32.dll
+0x71710000 - 0x71794000 	C:\WINNT\system32\comctl32.dll
+0x6d6c0000 - 0x6d6d3000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\net.dll
+0x74fa0000 - 0x74fb4000 	C:\WINNT\system32\WS2_32.dll
+0x78000000 - 0x78045000 	C:\WINNT\system32\MSVCRT.DLL
+0x74f90000 - 0x74f98000 	C:\WINNT\system32\WS2HELP.DLL
+0x6d6e0000 - 0x6d6e9000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\nio.dll
+0x7cf90000 - 0x7d1dc000 	C:\WINNT\system32\shell32.dll
+0x772a0000 - 0x77306000 	C:\WINNT\system32\SHLWAPI.dll
+0x6d2e0000 - 0x6d334000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\fontmanager.dll
+0x6d420000 - 0x6d42d000 	C:\Programme\Java\jdk1.6.0_16\jre\bin\JdbcOdbc.dll
+0x1f7a0000 - 0x1f7d6000 	C:\WINNT\system32\ODBC32.dll
+0x76b00000 - 0x76b3f000 	C:\WINNT\system32\comdlg32.dll
+0x1f840000 - 0x1f857000 	C:\WINNT\system32\odbcint.dll
+0x1f7f0000 - 0x1f80a000 	C:\WINNT\system32\odbccp32.dll
+0x77810000 - 0x77817000 	C:\WINNT\system32\VERSION.dll
+0x75940000 - 0x75946000 	C:\WINNT\system32\LZ32.DLL
+0x77830000 - 0x7783c000 	C:\WINNT\System32\rnr20.dll
+0x77970000 - 0x77995000 	C:\WINNT\system32\DNSAPI.DLL
+0x74fc0000 - 0x74fc9000 	C:\WINNT\system32\WSOCK32.dll
+0x77310000 - 0x77323000 	C:\WINNT\system32\iphlpapi.dll
+0x774f0000 - 0x774f5000 	C:\WINNT\system32\ICMP.dll
+0x03950000 - 0x03967000 	C:\WINNT\system32\MPRAPI.dll
+0x750c0000 - 0x750d0000 	C:\WINNT\system32\SAMLIB.DLL
+0x7ce20000 - 0x7ce70000 	C:\WINNT\system32\NETAPI32.DLL
+0x79430000 - 0x7943e000 	C:\WINNT\system32\Secur32.dll
+0x77be0000 - 0x77bf1000 	C:\WINNT\system32\NTDSAPI.dll
+0x77940000 - 0x7796c000 	C:\WINNT\system32\WLDAP32.DLL
+0x75130000 - 0x75136000 	C:\WINNT\system32\NETRAP.dll
+0x779a0000 - 0x77a3c000 	C:\WINNT\system32\OLEAUT32.DLL
+0x77380000 - 0x773b0000 	C:\WINNT\system32\ACTIVEDS.DLL
+0x77350000 - 0x77373000 	C:\WINNT\system32\ADSLDPC.DLL
+0x77820000 - 0x7782e000 	C:\WINNT\system32\RTUTILS.DLL
+0x78310000 - 0x783a1000 	C:\WINNT\system32\SETUPAPI.DLL
+0x791a0000 - 0x79205000 	C:\WINNT\system32\USERENV.DLL
+0x774b0000 - 0x774e4000 	C:\WINNT\system32\RASAPI32.dll
+0x77490000 - 0x774a1000 	C:\WINNT\system32\rasman.dll
+0x77500000 - 0x77522000 	C:\WINNT\system32\TAPI32.dll
+0x77330000 - 0x77349000 	C:\WINNT\system32\DHCPCSVC.DLL
+0x777d0000 - 0x777d8000 	C:\WINNT\System32\winrnr.dll
+0x777e0000 - 0x777e5000 	C:\WINNT\system32\rasadhlp.dll
+0x74f40000 - 0x74f5d000 	C:\WINNT\system32\msafd.dll
+0x74f80000 - 0x74f87000 	C:\WINNT\System32\wshtcpip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: pzm.gui.MainGUI
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\php\;C:\WINNT\system32;C:\WINNT;C:\WINNT\System32\Wbem;C:\Programme\Gemeinsame Dateien\Roxio Shared\9.0\DLLShared\;C:\Programme\Smart Projects\IsoBuster;H:\JavaLib\j-Interop\lib\;C:\Programme\Gemeinsame Dateien\Roxio Shared\DLLShared\;C:\Programme\Gemeinsame Dateien\Roxio Shared\DLLShared\;C:\Programme\Gemeinsame Dateien\Roxio Shared\9.0\DLLShared\;C:\Programme\MySQL\MySQL Server 5.1\bin;C:\Programme\ATI Technologies\ATI.ACE\
+USERNAME=hertel
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 8 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 2000 Build 2195 Service Pack 4
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 8 stepping 1, cmov, cx8, fxsr, mmx, sse, mmxext, 3dnow, 3dnowext
+
+Memory: 4k page, physical 2095920k(1173460k free), swap 4033096k(3056296k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.2-b01) for windows-x86 JRE (1.6.0_16-b01), built on Jul 31 2009 11:26:58 by "java_re" with MS VC++ 7.1
+
+time: Tue Jan 11 10:37:42 2011
+elapsed time: 129 seconds
+
