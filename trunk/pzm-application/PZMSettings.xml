@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>ProjektZeitenManager Einstellungen</comment>
+<!-- H:\\ToDo\\report\\templates\\ -->
+<!--<entry key="JasperReportsTemplatePath">H:\\Projektzeitenmanager\\report\\templates\\</entry>-->
+<entry key="LoggerLogfilePath">C:\\Users\\user\\konzept-e\\Projekte\\pzm-application\\PZMLogfile.log</entry>
+<entry key="DatabaseDriver">sun.jdbc.odbc.JdbcOdbcDriver</entry>
+<entry key="DatabaseDsnProjektzeit">jdbc:odbc:pzm</entry>
+</properties>
