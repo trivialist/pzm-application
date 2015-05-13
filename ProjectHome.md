@@ -1,0 +1,2 @@
+benutzerInnen können Ihre Arbeitszeit, geschlüsselt auf Unternehmens-Projekte erfassen.
+Die Zeiteinträge können anschließend für einzelne User und/oder alle User jahresweise ausgewertet, und exportiert werden.
